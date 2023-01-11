@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="edi.startup.AddInvoice"
+        title="edi.startup: Add Invoice"
+    />
+
+
+    <permission
         id="edi.startup.AddCustomer"
         title="edi.startup: Add Customer"
     />
