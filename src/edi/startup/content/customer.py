@@ -16,9 +16,9 @@ class ICustomer(model.Schema):
 
     contact_email = schema.TextLine(title=_('Contact E-Mail'))
 
-    contact_phone = schema.TextLine(title=_('Contact Phone'))
+    contact_phone = schema.TextLine(title=_('Contact Phone'), required=False)
 
-    contact_mobile = schema.TextLine(title=_('Contact Mobil'))
+    contact_mobile = schema.TextLine(title=_('Contact Mobil'), required=False)
 
     street = schema.TextLine(title=_('Street and Number'))
 

@@ -18,4 +18,11 @@
       directory="static"
       />
 
+  <browser:page
+      name="startup-controlpanel"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      permission="cmf.ManagePortal"
+      class=".panelsettings.StartupControlPanelView"
+      />
+
 </configure>
