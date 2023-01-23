@@ -10,7 +10,7 @@
       name="title">Position</property>
   <property
       i18n:translate=""
-      name="description">Position within an invoice</property>
+      name="description">Content-Type to create position within invoices</property>
 
   <property name="allow_discussion">False</property>
   <property name="factory">Position</property>
