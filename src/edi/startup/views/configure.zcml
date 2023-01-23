@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="edi.startup">
+
+  -*- extra stuff goes here -*-
+
+  <browser:page
+    name="invoice-view"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".invoice_view.InvoiceView"
+    template="invoice_view.pt"
+    permission="zope2.View"
+    />
+
+
+</configure>
