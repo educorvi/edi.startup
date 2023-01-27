@@ -14,4 +14,6 @@ class InvoiceView(BrowserView):
     def __call__(self):
         # Implement your own actions:
         self.msg = _(u'A small message')
+        self.customerobj = vars(self.context.customer.to_object)
+        self.date = self.context.effective().strftime('%d.%m.%Y')
         return self.index()

@@ -7,8 +7,8 @@
   -*- extra stuff goes here -*-
 
   <browser:page
-    name="invoice-view"
-    for="Products.CMFCore.interfaces.IFolderish"
+    name="view"
+    for="edi.startup.content.invoice.IInvoice"
     class=".invoice_view.InvoiceView"
     template="invoice_view.pt"
     permission="zope2.View"

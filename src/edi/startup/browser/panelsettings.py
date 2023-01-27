@@ -1,4 +1,5 @@
 from plone import schema
+from plone.supermodel.directives import fieldset
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.app.registry.browser.controlpanel import RegistryEditForm
 from zope.interface import Interface
@@ -23,11 +24,23 @@ class IStartupSettings(Interface):
 
     company_contact_phone = schema.TextLine(title=_("Contact Phone for Questions about Invoices"), required=False)
 
+    fieldset(
+        'bank',
+        label=_("Bank Account"),
+        fields=('bank', 'bankaccount', 'bic'),
+    )
+
     bank = schema.TextLine(title=_("Name of the Bank"))
 
     bankaccount = schema.TextLine(title=_("IBAN-Number of Bank-Account"))
 
     bic = schema.TextLine(title=_("BIC Bank Identifier Code"), required=False)
+
+    fieldset(
+        'invoice',
+        label=_("Invoice Preferences"),
+        fields=('invoice_format', 'first_number', 'register_type', 'register_number', 'tax_number', 'vat_number')
+    )
 
     invoice_format = schema.TextLine(title=_("Format for Invoice Numbers"),
                                      description=_("Use the fstring Format with variables {year}, {seq-number}, look at default as example."),
@@ -44,6 +57,19 @@ class IStartupSettings(Interface):
 
     vat_number = schema.TextLine(title=_("VAT-Number"))
     
+    fieldset(
+        'rates',
+        label=_("Service Rates"),
+        fields=('practice', 'trainee', 'professional', 'expert')
+    )
+
+    practice = schema.Float(title=_("Rate per hour for temporary staff or pupils"))
+
+    trainee = schema.Float(title=_("Rate per hour for trainess oder students"))
+
+    professional = schema.Float(title=_("Rate per hour for professionals"))
+
+    expert = schema.Float(title=_("Rate per hour for experts"))
 
 class StartupSettingsEditForm(RegistryEditForm):
     form.extends(RegistryEditForm)
