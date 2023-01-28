@@ -14,5 +14,12 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    name="pure-invoice"
+    for="edi.startup.content.invoice.IInvoice"
+    class=".invoice_view.PureInvoiceView"
+    template="pure_invoice_view.pt"
+    permission="zope2.View"
+    />
 
 </configure>

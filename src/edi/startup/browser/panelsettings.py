@@ -39,7 +39,7 @@ class IStartupSettings(Interface):
     fieldset(
         'invoice',
         label=_("Invoice Preferences"),
-        fields=('invoice_format', 'first_number', 'register_type', 'register_number', 'tax_number', 'vat_number')
+        fields=('invoice_format', 'first_number', 'register_type', 'register_number', 'jurisdiction', 'tax_number', 'vat_number', 'tax_rate')
     )
 
     invoice_format = schema.TextLine(title=_("Format for Invoice Numbers"),
@@ -53,9 +53,13 @@ class IStartupSettings(Interface):
 
     register_number = schema.TextLine(title=_("Register Number"), required=False)
 
+    jurisdiction = schema.TextLine(title=_("Place of jurisdiction"), required=False)
+
     tax_number = schema.TextLine(title=_("TAX-Number"))
 
     vat_number = schema.TextLine(title=_("VAT-Number"))
+
+    tax_rate = schema.Int(title=_("Tax rate in percent"))
     
     fieldset(
         'rates',

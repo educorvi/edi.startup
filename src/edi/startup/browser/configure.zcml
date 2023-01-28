@@ -11,12 +11,9 @@
       layer="edi.startup.interfaces.IEdiStartupLayer"
       />
 
-  <!-- Publish static files -->
-  <plone:static
-      name="edi.startup"
-      type="plone"
-      directory="static"
-      />
+  <browser:resourceDirectory
+    name="edi.startup"
+    directory="static" />
 
   <browser:page
       name="startup-controlpanel"
