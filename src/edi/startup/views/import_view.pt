@@ -1,13 +1,46 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      i18n:domain="edi.startup"
-      metal:use-macro="context/main_template/macros/master">
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="example.conference">
 <body>
-  <metal:block fill-slot="content-core">
-      <h2 i18n:translate="">Sample View</h2>
-      <p tal:content="view/msg">this gets replaced</p>
-  </metal:block>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+
+            <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+            <h1 class="documentFirstHeading" i18n:translate="">Create Invoices from JSON-Data</h1>
+
+            <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+            <p class="documentDescription" i18n:translate="">Insert JSON-Data in Textfield an click the Import Button</p>
+
+            <div tal:replace="structure provider:plone.abovecontentbody" />
+
+            <form tal:attributes="action view/validateview">
+
+              <div class="mb-3">
+                <label for="jsondata" class="form-label">JSON-Data</label>
+                <textarea class="form-control" id="jsondata" name="jsondata" rows="10"></textarea>
+              </div>
+
+              <input class="btn btn-primary" type="submit" name="submit" i18n:attributes="value import_submit_button" value="Check and Import">
+            </form>
+
+            <div tal:replace="structure provider:plone.belowcontentbody" />
+
+	  </div>
+        </div>
+      </div>
+    </tal:main-macro>
+</metal:main>
+
 </body>
 </html>

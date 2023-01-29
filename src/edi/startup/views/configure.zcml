@@ -15,6 +15,13 @@
     />
 
   <browser:page
+    name="validate-view"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".import_view.ValidateView"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="view"
     for="edi.startup.content.invoice.IInvoice"
     class=".invoice_view.InvoiceView"
