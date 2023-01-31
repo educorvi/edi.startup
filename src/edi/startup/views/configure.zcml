@@ -37,4 +37,11 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    name="print-view"
+    for="edi.startup.content.invoice.IInvoice"
+    class=".print_view.PrintView"
+    permission="zope2.View"
+    />
+
 </configure>

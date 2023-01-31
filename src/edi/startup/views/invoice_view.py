@@ -14,7 +14,6 @@ class InvoiceView(BrowserView):
         self.preferences = self.get_preferences()
         self.positions = self.get_positions()
         self.summary = self.get_summary()
-        print(self.summary)
         return self.index()
 
     def get_preferences(self):
