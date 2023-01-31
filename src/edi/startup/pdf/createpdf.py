@@ -143,12 +143,13 @@ def createpdf(filehandle, content):
     hours = _("Hours")
     subtotal = _("Subtotal")
     data = """\
-Indexierung aller relvanten Daten aus den Objekten der Projektsteuerung\r\n
-Period: 14.12.2022 - 25.01.2023\r\n
-\n
-Employee Qualifications:\r\n
-Professional: 12 Hours\r\n
+Indexierung aller relvanten Daten aus den Objekten der Projektsteuerung<br/>
+Period: 14.12.2022 - 25.01.2023<br/>
+<br/>
+<b>Employee Qualifications:</b><br/>
+Professional: 12 Hours
 """
+    story.append(Spacer(0 * cm, 5 * cm))
     datatable = [
                  [Paragraph("#"), Paragraph(services, entry_normal), Paragraph(hours, entry_normal), Paragraph(subtotal, entry_normal)],
                  [Paragraph("1"), Paragraph(data, entry_normal), Paragraph("12", entry_normal), Paragraph("1200,00 €", entry_right)]
