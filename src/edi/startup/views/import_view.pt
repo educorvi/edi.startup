@@ -24,7 +24,7 @@
 
             <div tal:replace="structure provider:plone.abovecontentbody" />
 
-            <form tal:attributes="action view/validateview">
+            <form tal:attributes="action view/validateview" method="post">
 
               <div class="mb-3">
                 <label for="jsondata" class="form-label">JSON-Data</label>

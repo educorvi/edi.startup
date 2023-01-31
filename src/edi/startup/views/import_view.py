@@ -19,7 +19,7 @@ class ValidateView(BrowserView):
     def __call__(self):
         self.intids = getUtility(IIntIds)
         url = self.context.absolute_url() + "/@@import-view"
-        jsondata = self.request.form.get('jsondata')
+        jsondata = self.request.get('jsondata')
         if not jsondata:
             message = _('Please insert JSON-Data in Textfield and click the "Check and Import Button"')
             api.portal.show_message(message=message, request=self.request, type='error')
@@ -65,8 +65,9 @@ class ValidateView(BrowserView):
             end = datetime.strptime(element["to"][:19], "%Y-%m-%dT%H:%M:%S")
             delta = end - start
             hours = delta.seconds / 3600
-            employee = element["user"]["email"]
-            hours = self.calculate_hours_for_employee(employee, hours)
+            employee_id = element["user"]["id"]
+            employee_email = element["user"]["email"]
+            hours = self.calculate_hours_for_employee(employee_id, employee_email, hours)
             comment = element["note"]
             task = element["task"]["id"]
             taskobj = api.content.get(UID = task)
@@ -122,20 +123,22 @@ class ValidateView(BrowserView):
                     billfolder[projectuid]["positions"][task] = position
         return billfolder
 
-    def calculate_hours_for_employee(self, employee, delta):
+    def calculate_hours_for_employee(self, employee_id, employee_email, hours):
         skills = {'practice':0, 'trainee':0, 'professional':0, 'expert':0}
         current_user = None
-        users = api.user.get_users()
-        for user in users:
-            if user.getProperty('email') == employee:
-                current_user = user
+        current_user = api.user.get(username=employee_id)
         if not current_user:
-            return skills
+            users = api.user.get_users()
+            for user in users:
+                if user.getProperty('email') == employee_email:
+                    current_user = user
+            if not current_user:
+                return skills
         groups = api.group.get_groups(user=current_user)
         groups = [group.id for group in groups]
         if not groups:
             return skills
-        hours = round(delta)
+        hours = round(hours)
         if hours == 0:
             hours = 1
         if 'expert' in groups:
