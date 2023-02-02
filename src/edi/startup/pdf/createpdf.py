@@ -141,6 +141,7 @@ def createpdf(filehandle, content):
     colWidths = [10 * cm, 10 * cm, 10 * cm]
     receiver = [[Paragraph("Receiver")], [Paragraph("address")]]
     table2 = Table(receiver, colWidths=colWidths)
+    table2.hAlign = 'LEFT'
     story.append(table2)
 
     colWidths = [1*cm, 8*cm, 4*cm, 4*cm]
