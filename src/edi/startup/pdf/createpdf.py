@@ -138,9 +138,9 @@ def createpdf(filehandle, content):
     story.append(table)
     story.append(Spacer(0 * cm, 0.5 * cm))
 
-    colWidths = [10 * cm, 2.75 * cm, 6.25 * cm]
+    colWidths = [10 * cm, 10 * cm, 10 * cm]
     receiver = ['Receiver', 'address']
-    table2 = Table(receiver)
+    table2 = Table(receiver, colWidths=colWidths)
     story.append(table2)
 
     colWidths = [1*cm, 8*cm, 4*cm, 4*cm]
