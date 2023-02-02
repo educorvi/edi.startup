@@ -143,6 +143,7 @@ def createpdf(filehandle, content):
     table2 = Table(receiver, colWidths=colWidths)
     table2.hAlign = 'LEFT'
     story.append(table2)
+    import pdb; pdb.set_trace()
 
     colWidths = [1*cm, 8*cm, 4*cm, 4*cm]
     services = _("Services")
