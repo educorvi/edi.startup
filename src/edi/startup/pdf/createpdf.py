@@ -134,12 +134,14 @@ def createpdf(filehandle, content):
     testheadline = u'<font color="#008c8e"><b>%s</b></font>' % formtitle
     toptable = [[Paragraph(testheadline, h2), Paragraph(u" ", bodytext), logo]]
     table = Table(toptable, colWidths=colWidths, style=[('VALIGN', (0, 0), (-1, -1), 'TOP')])
-    receiver = ['Receiver', 'address']
-    table2 = Table(receiver)
     table.hAlign = 'CENTER'
     story.append(table)
-    story.append(table2)
     story.append(Spacer(0 * cm, 0.5 * cm))
+
+    colWidths = [10 * cm, 2.75 * cm, 6.25 * cm]
+    receiver = ['Receiver', 'address']
+    table2 = Table(receiver)
+    story.append(table2)
 
     colWidths = [1*cm, 8*cm, 4*cm, 4*cm]
     services = _("Services")
