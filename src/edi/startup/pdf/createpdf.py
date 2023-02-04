@@ -205,11 +205,15 @@ Professional: 12 Hours
             qualis.append(_('Expert') +': ' + str(pos['expert']))
 
         summedhours = pos['practice'] + pos['trainee'] + pos['professional'] + pos['expert']
+        subtotalrow = (pos['practice'] * content.preferences['practice']) + \
+                      (pos['trainee'] * content.preferences['trainee']) + \
+                      (pos['professional'] * content.preferences['professional']) + \
+                      (pos['expert'] * content.preferences['expert'])
 
         rowdata = pos['title'] + '<br/>' + _("Period") + ": " + pos['start'] + " - " + pos['end'] + '<br/><br/>' + _('Employee Qualifications') + ':'
         for quali in qualis:
             rowdata = rowdata + '<br/>' + quali
-        row = [Paragraph(str(pos['posnr'])), Paragraph(str(rowdata)), Paragraph(str(summedhours))]
+        row = [Paragraph(str(pos['posnr'])), Paragraph(str(rowdata)), Paragraph(str(summedhours)), Paragraph(str(subtotalrow))]
         datatable2.append(row)
     table = Table(datatable2, colWidths=colWidths)
     story.append(table)
