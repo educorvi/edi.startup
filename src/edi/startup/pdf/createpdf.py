@@ -146,6 +146,20 @@ def createpdf(filehandle, content):
     story.append(table2)
     import pdb; pdb.set_trace()
 
+    story.append(Spacer(0 * cm, 2 * cm))
+
+    colWidths = [10 * cm, 10 * cm, 10 * cm]
+    dummyobj = "12345"
+    customer_number = _("Customer number") + ": " + content.customerobj['customer_number']
+    invoice_number = _("Invoice number") + ": " + dummyobj
+    date = _("Date") + ": " + content.date
+
+    invoicedetails = [[Paragraph(customer_number)], [Paragraph(invoice_number)],
+                [Paragraph(date)]]
+    invoicedetailstable = Table(invoicedetails, colWidths=colWidths)
+    invoicedetailstable.hAlign = 'LEFT'
+    story.append(invoicedetailstable)
+
     colWidths = [1*cm, 8*cm, 4*cm, 4*cm]
     services = _("Services")
     hours = _("Hours")
