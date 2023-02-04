@@ -194,7 +194,7 @@ Professional: 12 Hours
     datatable2 = list()
     datatable2.append([Paragraph("#"), Paragraph(services, entry_normal), Paragraph(hours, entry_normal), Paragraph(subtotal, entry_normal)])
     for pos in datanew:
-        row = [Paragraph(pos['posnr']), Paragraph(pos['title'])]
+        row = [str(Paragraph(pos['posnr'])), Paragraph(pos['title'])]
         datatable2.append(row)
     table = Table(datatable2, colWidths=colWidths)
     story.append(table)
