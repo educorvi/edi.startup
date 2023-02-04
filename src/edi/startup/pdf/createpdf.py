@@ -154,7 +154,7 @@ def createpdf(filehandle, content):
     invoice_number = _("Invoice number") + ": " + dummyobj
     date = _("Date") + ": " + content.date
 
-    invoicedetails = [[Paragraph(customer_number)], [Paragraph(invoice_number)],
+    invoicedetails = [[Paragraph(customer_number), Paragraph(customer_number)], [Paragraph(invoice_number)],
                 [Paragraph(date)]]
     invoicedetailstable = Table(invoicedetails, colWidths=colWidths)
     invoicedetailstable.hAlign = 'LEFT'
