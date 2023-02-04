@@ -154,7 +154,7 @@ def createpdf(filehandle, content):
     import pdb; pdb.set_trace()
 
 # Invoice details in separate row
-"""
+    """
     story.append(Spacer(0 * cm, 2 * cm))
     colWidths = [10 * cm, 10 * cm, 10 * cm]
     dummyobj = "12345"
@@ -167,7 +167,7 @@ def createpdf(filehandle, content):
     invoicedetailstable = Table(invoicedetails, colWidths=colWidths)
     invoicedetailstable.hAlign = 'LEFT'
     story.append(invoicedetailstable)
-"""
+    """
 
     colWidths = [1*cm, 8*cm, 4*cm, 4*cm]
     services = _("Services")
