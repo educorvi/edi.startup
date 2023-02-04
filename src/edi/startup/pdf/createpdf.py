@@ -138,27 +138,36 @@ def createpdf(filehandle, content):
     story.append(table)
     story.append(Spacer(0 * cm, 0.5 * cm))
 
+    dummyobj = "12345"
+    customer_number = _("Customer number") + ": " + content.customerobj['customer_number']
+    invoice_number = _("Invoice number") + ": " + dummyobj
+    date = _("Date") + ": " + content.date
+
     colWidths = [10 * cm, 10 * cm, 10 * cm]
     lastline = str(content.customerobj['zipcode']) + ' ' + str(content.customerobj['city'])
-    receiver = [[Paragraph(content.customerobj['title'])], [Paragraph(content.customerobj['contact_person'])], [Paragraph(content.customerobj['street'])], [Paragraph(lastline)]]
+    receiver = [[Paragraph(content.customerobj['title']), Paragraph(customer_number)],
+                [Paragraph(content.customerobj['contact_person']), Paragraph(invoice_number)],
+                [Paragraph(content.customerobj['street']), Paragraph(date)], [Paragraph(lastline)]]
     table2 = Table(receiver, colWidths=colWidths)
     table2.hAlign = 'LEFT'
     story.append(table2)
     import pdb; pdb.set_trace()
 
+# Invoice details in separate row
+"""
     story.append(Spacer(0 * cm, 2 * cm))
-
     colWidths = [10 * cm, 10 * cm, 10 * cm]
     dummyobj = "12345"
     customer_number = _("Customer number") + ": " + content.customerobj['customer_number']
     invoice_number = _("Invoice number") + ": " + dummyobj
     date = _("Date") + ": " + content.date
 
-    invoicedetails = [[Paragraph(customer_number), Paragraph(customer_number)], [Paragraph(invoice_number)],
+    invoicedetails = [[Paragraph(customer_number)], [Paragraph(invoice_number)],
                 [Paragraph(date)]]
     invoicedetailstable = Table(invoicedetails, colWidths=colWidths)
     invoicedetailstable.hAlign = 'LEFT'
     story.append(invoicedetailstable)
+"""
 
     colWidths = [1*cm, 8*cm, 4*cm, 4*cm]
     services = _("Services")
