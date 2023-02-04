@@ -180,12 +180,23 @@ Period: 14.12.2022 - 25.01.2023<br/>
 <b>Employee Qualifications:</b><br/>
 Professional: 12 Hours
 """
-    story.append(Spacer(0 * cm, 5 * cm))
+    story.append(Spacer(0 * cm, 2 * cm))
     datatable = [
                  [Paragraph("#"), Paragraph(services, entry_normal), Paragraph(hours, entry_normal), Paragraph(subtotal, entry_normal)],
                  [Paragraph("1"), Paragraph(data, entry_normal), Paragraph("12", entry_normal), Paragraph("1200,00 €", entry_right)]
                 ]
     table = Table(datatable, colWidths=colWidths)
+    story.append(table)
+
+    story.append(Spacer(0 * cm, 2 * cm))
+
+    datanew = content.positions
+    datatable2 = list()
+    datatable2.append([Paragraph("#"), Paragraph(services, entry_normal), Paragraph(hours, entry_normal), Paragraph(subtotal, entry_normal)])
+    for pos in datanew:
+        row = [Paragraph(pos['title'])]
+        datatable2.append(row)
+    table = Table(datatable2, colWidths=colWidths)
     story.append(table)
 
     doc = PdfBaseTemplate(filehandle, pagesize=A4)
