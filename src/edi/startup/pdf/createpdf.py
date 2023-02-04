@@ -194,7 +194,19 @@ Professional: 12 Hours
     datatable2 = list()
     datatable2.append([Paragraph("#"), Paragraph(services, entry_normal), Paragraph(hours, entry_normal), Paragraph(subtotal, entry_normal)])
     for pos in datanew:
-        rowdata = pos['title'] + '<br/>' + _("Period") + ": " + pos['start'] + " - " + pos['end']
+        qualis = list()
+        if pos['practice']:
+            qualis.append(_('Practice') + ': ' + str(pos['practice']))
+        if pos['trainee']:
+            qualis.append(_('Trainee') + ': ' + str(pos['trainee']))
+        if pos['professional']:
+            qualis.append(_('Professional') + ': ' + str(pos['professional']))
+        if pos['expert']:
+            qualis.append(_('Expert') +': ' + str(pos['expert']))
+
+        rowdata = pos['title'] + '<br/>' + _("Period") + ": " + pos['start'] + " - " + pos['end'] + '<br/><br/>' + _('Employee Qualifications') + ':'
+        for quali in qualis:
+            rowdata = rowdata + '<br/>' + quali
         row = [Paragraph(str(pos['posnr'])), Paragraph(str(rowdata))]
         datatable2.append(row)
     table = Table(datatable2, colWidths=colWidths)
