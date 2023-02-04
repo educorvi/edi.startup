@@ -143,7 +143,7 @@ def createpdf(filehandle, content):
     invoice_number = _("Invoice number") + ": " + dummyobj
     date = _("Date") + ": " + content.date
 
-    colWidths = [10 * cm, 10 * cm, 10 * cm]
+    colWidths = [13 * cm, 10 * cm, 10 * cm]
     lastline = str(content.customerobj['zipcode']) + ' ' + str(content.customerobj['city'])
     receiver = [[Paragraph(content.customerobj['title']), Paragraph(customer_number)],
                 [Paragraph(content.customerobj['contact_person']), Paragraph(invoice_number)],
