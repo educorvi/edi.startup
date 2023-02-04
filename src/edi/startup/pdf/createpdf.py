@@ -129,7 +129,7 @@ def createpdf(filehandle, content):
     datum = u"Datum: %s" % (strftime("%d.%m.%Y"))
     zeit = u"Zeit: %s" % (strftime("%H:%M:%S", localtime()))
 
-    colWidths = [9.5*cm, 2.75*cm, 6.25*cm]
+    colWidths = [14*cm, 2.75*cm, 6.25*cm]
     formtitle = _("Invoice")
     testheadline = u'<font color="#008c8e"><b>%s</b></font>' % formtitle
     toptable = [[Paragraph(testheadline, h2), Paragraph(u" ", bodytext), logo]]
