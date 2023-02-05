@@ -219,8 +219,11 @@ Professional: 12 Hours
     story.append(table)
 
     story.append(Spacer(0 * cm, 2 * cm))
+    summarytable = list()
+    taxratestring = _("Tax rate ") + str(content.preferences['tax_rate']) + '%'
     summarydata = content.summary
-    summarytable = [[Paragraph(_("Subtotal")), Paragraph(str(summarydata[0]))]]
+    summarytable.append([Paragraph(_("Subtotal")), Paragraph(str(summarydata[0]))])
+    summarytable.append([Paragraph(taxratestring), Paragraph(str(summarydata[1]))])
     colWidths = [13 * cm, 4 * cm]
     table = Table(summarytable, colWidths=colWidths)
     story.append(table)
