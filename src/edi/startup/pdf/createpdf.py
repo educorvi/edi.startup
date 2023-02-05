@@ -221,7 +221,7 @@ Professional: 12 Hours
     story.append(Spacer(0 * cm, 2 * cm))
     summarydata = content.summary
     summarytable = [[Paragraph(_("Subtotal")), Paragraph(str(summarydata[0]))]]
-    colWidths = [9 * cm, 4 * cm]
+    colWidths = [13 * cm, 4 * cm]
     table = Table(summarytable, colWidths=colWidths)
     story.append(table)
 
