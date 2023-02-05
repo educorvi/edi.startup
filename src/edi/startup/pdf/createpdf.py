@@ -218,5 +218,12 @@ Professional: 12 Hours
     table = Table(datatable2, colWidths=colWidths)
     story.append(table)
 
+    story.append(Spacer(0 * cm, 2 * cm))
+    summarydata = content.summary
+    summarytable = [[Paragraph(_("Subtotal")), Paragraph(str(summarydata[0]))]]
+    colWidths = [9 * cm, 4 * cm]
+    table = Table(summarytable, colWidths=colWidths)
+    story.append(table)
+
     doc = PdfBaseTemplate(filehandle, pagesize=A4)
     doc.build(story, canvasmaker=NumberedCanvas)
