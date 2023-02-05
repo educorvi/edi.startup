@@ -65,6 +65,7 @@ class NumberedCanvas(canvas.Canvas):
         if self._pageNumber == page_count:
             self.drawRightString(19.3 * cm, 2 * cm, "Seite %d von %d" % (self._pageNumber, page_count))
             self.drawString(9.25 * cm, 2 * cm, "www.educorvi.de")
+            self.drawString(1.2 * cm, 2 * cm, "                                              ")
             self.drawString(1.2 * cm, 2 * cm, "educorvi GmbH & Co. KG")
             self.drawString(1.2 * cm, 1.6 * cm, "Karolinenstraße 17")
             self.drawString(1.2 * cm, 1.2 * cm, "90763 Fürth")
