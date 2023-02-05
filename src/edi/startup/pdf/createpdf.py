@@ -229,6 +229,5 @@ Professional: 12 Hours
     table = Table(summarytable, colWidths=colWidths)
     story.append(table)
 
-    doc = PdfBaseTemplate(filehandle, pagesize=A4)
-    doc.bottomMargin = 5 * cm
+    doc = PdfBaseTemplate(filehandle, pagesize=A4, bottomMargin = 5 * cm)
     doc.build(story, canvasmaker=NumberedCanvas)
