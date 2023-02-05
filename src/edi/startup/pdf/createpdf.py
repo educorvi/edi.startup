@@ -224,6 +224,7 @@ Professional: 12 Hours
     summarydata = content.summary
     summarytable.append([Paragraph(_("Subtotal")), Paragraph(str(summarydata[0]))])
     summarytable.append([Paragraph(taxratestring), Paragraph(str(summarydata[1]))])
+    summarytable.append([Paragraph(_("Total")), Paragraph(str(summarydata[2]))])
     colWidths = [13 * cm, 4 * cm]
     table = Table(summarytable, colWidths=colWidths)
     story.append(table)
