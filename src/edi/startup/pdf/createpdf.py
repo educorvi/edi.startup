@@ -159,7 +159,6 @@ def createpdf(filehandle, content):
     table2 = Table(receiver, colWidths=colWidths)
     table2.hAlign = 'LEFT'
     story.append(table2)
-    import pdb; pdb.set_trace()
 
 # Invoice details in separate row
     """
