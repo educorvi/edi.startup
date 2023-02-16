@@ -68,7 +68,7 @@ class NumberedCanvas(canvas.Canvas):
             self.drawString(1.2 * cm, 2 * cm, "90763 Fürth")
             self.drawString(1.2 * cm, 1.6 * cm, "www.educorvi.de")
             self.drawString(1.2 * cm, 1.2 * cm, "info@educorvi.de")
-            self.drawString(1.2 * cm, 2.8 * cm, "Geschäftsführer: Lars Walther")
+            self.drawString(9.25 * cm, 2.8 * cm, "Geschäftsführer: Lars Walther")
             self.drawString(9.25 * cm, 2.4 * cm, "Raiffeisenbank Bad Windsheim")
             self.drawString(9.25 * cm, 2 * cm, "IBAN: DE96 7606 9372 0000 086010")
             self.drawString(9.25 * cm, 1.6 * cm, "BIC: GENODEF1WDS")
