@@ -33,7 +33,7 @@ class PdfBaseTemplate(BaseDocTemplate):
     """Basistemplate for PDF-Prints"""
 
     def __init__(self, filename, **kw):
-        frame1 = Frame(1 * cm, 3 * cm, 18.5 * cm, 27 * cm, id='F1', showBoundary=False)
+        frame1 = Frame(1 * cm, 3 * cm, 18.5 * cm, 25 * cm, id='F1', showBoundary=False)
         self.allowSplitting = 0
         apply(BaseDocTemplate.__init__, (self, filename), kw)
         self.addPageTemplates(PageTemplate('normal', [frame1]))
