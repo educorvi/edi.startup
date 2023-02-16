@@ -63,14 +63,14 @@ class NumberedCanvas(canvas.Canvas):
         if self._pageNumber < page_count:
             self.drawRightString(19.3 * cm, 1 * cm, "Seite %d von %d" % (self._pageNumber, page_count))
         if self._pageNumber == page_count:
-            self.drawString(1.2 * cm, 2.4 * cm, "educrovi GmbH & Co. KG")
+            self.drawString(1.2 * cm, 2.4 * cm, "educorvi GmbH & Co. KG")
             self.drawString(1.2 * cm, 2 * cm, "Karolinenstraße 17")
             self.drawString(1.2 * cm, 1.6 * cm, "90763 Fürth")
             self.drawString(1.2 * cm, 1.2 * cm, "www.educorvi.de")
             self.drawString(9.25 * cm, 2.4 * cm, "Raiffeisenbank Bad Windsheim")
-            self.drawString(9.25 * cm, 2 * cm, "")
-            self.drawString(9.25 * cm, 1.6 * cm, "IBAN: DE96 7606 9372 0000 086010")
-            self.drawString(9.25 * cm, 1.2 * cm, "BIC: GENODEF1WDS")
+            self.drawString(9.25 * cm, 2 * cm, "IBAN: DE96 7606 9372 0000 086010")
+            self.drawString(9.25 * cm, 1.6 * cm, "BIC: GENODEF1WDS")
+            self.drawString(9.25 * cm, 1.2 * cm, "Finanzamt Fürth")
             self.drawRightString(19.3 * cm, 2.4 * cm, "Seite %d von %d" % (self._pageNumber, page_count))
             self.drawString(16.5 * cm, 2.0 * cm, "Handelsregister: HRA10594")
             self.drawString(16.5 * cm, 1.6 * cm, "Amtsgericht & Finanzamt Fürth")
