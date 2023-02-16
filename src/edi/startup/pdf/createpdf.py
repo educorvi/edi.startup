@@ -72,9 +72,9 @@ class NumberedCanvas(canvas.Canvas):
             self.drawString(9.25 * cm, 1.6 * cm, "IBAN: DE96 7606 9372")
             self.drawString(9.25 * cm, 1.2 * cm, "BIC: GENODEF1WDS")
             self.drawRightString(19.3 * cm, 2.4 * cm, "Seite %d von %d" % (self._pageNumber, page_count))
-            self.drawString(19.3 * cm, 2.0 * cm, "Handelsregister: HRA10594")
-            self.drawString(19.3 * cm, 1.6 * cm, "Amtsgericht & Finanzamt Fürth")
-            self.drawString(19.3 * cm, 1.2 * cm, "Steuernummer: 218/157/05901")
+            self.drawString(12.5 * cm, 2.0 * cm, "Handelsregister: HRA10594")
+            self.drawString(12.5 * cm, 1.6 * cm, "Amtsgericht & Finanzamt Fürth")
+            self.drawString(12.5 * cm, 1.2 * cm, "Steuernummer: 218/157/05901")
 
 
 
