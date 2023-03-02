@@ -9,7 +9,7 @@ from reportlab.lib.colors import grey, white
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus.frames import Frame
-from reportlab.platypus import Table
+from reportlab.platypus import Table, TableStyle
 from reportlab.platypus.flowables import Flowable, Spacer, Image, PageBreak, BalancedColumns
 from reportlab.platypus.paragraph import Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
@@ -194,7 +194,7 @@ def createpdf(filehandle, content):
     story.append(Spacer(0 * cm, 2 * cm))
     """
 
-    story.append(Spacer(0 * cm, 2 * cm))
+    story.append(Spacer(0 * cm, 1 * cm))
 
     colWidths = [1 * cm, 8 * cm, 4 * cm, 4 * cm]
     services = _("Services")
@@ -226,7 +226,15 @@ def createpdf(filehandle, content):
             rowdata = rowdata + '<br/>' + quali
         row = [Paragraph(str(pos['posnr'])), Paragraph(str(rowdata)), Paragraph(str(summedhours)), Paragraph(str(subtotalrow))]
         datatable2.append(row)
-    table = Table(datatable2, colWidths=colWidths)
+
+    table_style = TableStyle(
+        [
+            ('INNERGRID', (0, 0), (-1, -1), 0.25, colors.black),
+            ('BOX', (0, 0), (-1, -1), 0.25, colors.black),
+        ]
+    )
+
+    table = Table(datatable2, style=table_style, colWidths=colWidths)
     story.append(table)
 
     story.append(Spacer(0 * cm, 2 * cm))
