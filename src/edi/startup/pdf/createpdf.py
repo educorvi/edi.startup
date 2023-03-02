@@ -178,17 +178,19 @@ def createpdf(filehandle, content):
     invoicedetailstable.hAlign = 'LEFT'
     story.append(invoicedetailstable)
     """
-
+"""
     colWidths = [1*cm, 8*cm, 4*cm, 4*cm]
     services = _("Services")
     hours = _("Hours")
     subtotal = _("Subtotal")
     data = """\
-Indexierung aller relvanten Daten aus den Objekten der Projektsteuerung<br/>
-Period: 14.12.2022 - 25.01.2023<br/>
-<br/>
-<b>Employee Qualifications:</b><br/>
-Professional: 12 Hours
+    Indexierung aller relvanten Daten aus den Objekten der Projektsteuerung<br/>
+    Period: 14.12.2022 - 25.01.2023<br/>
+    <br/>
+    <b>Employee Qualifications:</b><br/>
+    Professional: 12 Hours
+    """
+"""
 """
     story.append(Spacer(0 * cm, 2 * cm))
     datatable = [
@@ -199,6 +201,7 @@ Professional: 12 Hours
     story.append(table)
 
     story.append(Spacer(0 * cm, 2 * cm))
+"""
 
     datanew = content.positions
     datatable2 = list()
