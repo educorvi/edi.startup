@@ -16,6 +16,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.enums import TA_RIGHT as _r
 from reportlab.lib.enums import TA_CENTER as _c
+from reportlab.lib import colors
 from reportlab.platypus.doctemplate import PageTemplate, BaseDocTemplate
 from apply import apply
 
