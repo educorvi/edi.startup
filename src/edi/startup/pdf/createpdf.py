@@ -197,7 +197,7 @@ def createpdf(filehandle, content):
 
     story.append(Spacer(0 * cm, 1 * cm))
 
-    colWidths = [1 * cm, 8 * cm, 4 * cm, 4 * cm]
+    colWidths = [1 * cm, 10 * cm, 2 * cm, 4 * cm]
     services = _("Services")
     hours = _("Hours")
     subtotal = _("Subtotal")
@@ -246,7 +246,7 @@ def createpdf(filehandle, content):
     summarytable.append([Paragraph(taxratestring), Paragraph(str(summarydata[1]))])
     summarytable.append([Paragraph(_("Total")), Paragraph(str(summarydata[2]))])
     colWidths = [13 * cm, 4 * cm]
-    table = Table(summarytable, colWidths=colWidths)
+    table = Table(summarytable, style=table_style, colWidths=colWidths)
     story.append(table)
 
     doc = PdfBaseTemplate(filehandle, pagesize=A4, leftMargin=2.2*cm, rightMargin=2.2*cm, topMargin=1.5*cm,bottomMargin=-10*cm)
