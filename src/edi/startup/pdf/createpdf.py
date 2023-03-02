@@ -245,7 +245,7 @@ def createpdf(filehandle, content):
     summarytable.append([Paragraph(_("Subtotal")), Paragraph(str(summarydata[0]))])
     summarytable.append([Paragraph(taxratestring), Paragraph(str(summarydata[1]))])
     summarytable.append([Paragraph(_("Total")), Paragraph(str(summarydata[2]))])
-    colWidths = [13 * cm, 4 * cm]
+    colWidths = [14.5 * cm, 3 * cm]
     table = Table(summarytable, style=table_style, colWidths=colWidths)
     story.append(table)
 
