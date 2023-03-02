@@ -238,7 +238,7 @@ def createpdf(filehandle, content):
     table = Table(datatable2, style=table_style, colWidths=colWidths)
     story.append(table)
 
-    story.append(Spacer(0 * cm, 2 * cm))
+    story.append(Spacer(0 * cm, 1 * cm))
     summarytable = list()
     taxratestring = _("Tax rate ") + str(content.preferences['tax_rate']) + '%'
     summarydata = content.summary
