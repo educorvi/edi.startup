@@ -77,7 +77,7 @@ class NumberedCanvas(canvas.Canvas):
             self.drawString(16.5 * cm, 2.4 * cm, "Handelsregister: HRA10594")
             self.drawString(16.5 * cm, 2.0 * cm, "Amtsgericht & Finanzamt Fürth")
             self.drawString(16.5 * cm, 1.6 * cm, "Steuernummer: 218/157/05901")
-            self.drawString(16.5 * cm, 1.4 * cm, "USt-ID: xxxxxxxxxx")
+            self.drawString(16.5 * cm, 1.2 * cm, "USt-ID: xxxxxxxxxx")
 
 
 
