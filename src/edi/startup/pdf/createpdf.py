@@ -197,7 +197,7 @@ def createpdf(filehandle, content):
 
     story.append(Spacer(0 * cm, 1 * cm))
 
-    colWidths = [1 * cm, 12 * cm, 1 * cm, 3 * cm]
+    colWidths = [1 * cm, 12 * cm, 1.5 * cm, 3 * cm]
     services = _("Services")
     hours = _("Hours")
     subtotal = _("Subtotal")
