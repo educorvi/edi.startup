@@ -59,6 +59,7 @@ class NumberedCanvas(canvas.Canvas):
         canvas.Canvas.save(self)
 
     def draw_page_number(self, page_count):
+        import pdb; pdb.set_trace()
         self.setFont("EDIBold", 7.5)
         if self._pageNumber < page_count:
             self.drawRightString(19.3 * cm, 1 * cm, "Seite %d von %d" % (self._pageNumber, page_count))
